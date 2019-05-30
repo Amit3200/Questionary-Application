@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Ecological - Vegan World 2026!  </title>
+  <!-- Font Awesome -->
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',filename='css/mdb.min.css') }}" rel="stylesheet">
+  <link rel="shortcut icon" href="{{url_for('static',filename='img/favicon.ico') }}" type="image/x-icon">
+  <link rel="icon" href="{{url_for('static',filename='img/favicon.ico') }}" type="image/x-icon">
+  <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet">
+
+  <meta name="theme-color" content="#4285F4">
+
+</head>
+
+<body>
+
+<header>
+<nav class="navbar navbar-expand-lg  navbar-dark primary-color fixed-top scrolling-navbar">
+  <a class="navbar-brand" href="index.html">
+    <img src="{{ url_for('static',filename='img/logo.png' )}}" height="80" alt="vegan world 2026 logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/overview/">Overview</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/ecological/">Ecological</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/economic/">Economic</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/political/">Political</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/social/">Social</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/spiritual/">Spiritual</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/study_group/">Study Groups</a>
+      </li>
+      <li class="nav-item">
+        <a href="/join_us/">
+        <button class="btn-join-us btn btn-amber btn-sm waves-effect font-weight-bold" type="button">Join Us!</button>
+      </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+</header>
+
+<div class="container space">
+  <div class="row">
+    <div class="col-md-7">
+      <img class="img-fluid z-depth-3" src="{{ url_for('static',filename='img/Brain+Swarming.jpg')}}">
+    </div>
+    <div class="col-md-5">
+      <h6 class="h6-responsive font-weight-bold mb-3">ECOLOGICAL PRINCIPLES:</h6>
+        <ol>
+          <li>Monocultures -> <a href="https://www.agroforestry.org/projects/food-producing-landscapes">Biodiversity (Food Forests)</a></li>
+          <li>Climate Destruction -> <a href="http://www.climatehealers.org/">Climate Healing</a></li>
+          <li>Ecological Overshoot -> <a href="http://ageofthrivability.com/"> Ecological Thrivability</a></li>
+          <li>Artificial Scarcity -> <a href="https://charleseisenstein.net/essays/a-beautiful-world-of-abundance/"> Natural Abundance</a></li>
+          <li>Death-dealing -> <a href="http://www.togetherincreation.org/che"> Life-enriching</a></li>
+        </ol>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-12 text-center">
+       <h4 class="h4-responsive font-weight-bold mb-3">ECOLOGICAL SHIFT </h4>
+       <img class="img-fluid z-depth-3" src="{{ url_for('static',filename='img/Ecological+Shift+Questions.jpg')}}">
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container my-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h5 class="text-center h5-responsive font-weight-bold mb-3">ECOLOGICAL SHIFT QUESTIONS</h5>
+      <table id="ecological1" class="table table-hover table-responsive-md btn-table">
+
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Favorite</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>How can we educate in schools, globally, to stop speciesism?</td>
+            <td class="text-center"> <span class="btn-fav badge badge-danger btn-circle">4</span></td>
+            <td class="text-center">
+              <div class="dropdown">
+                <button class="btn btn-action btn-sm btn-circle btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                <div class="dropdown-menu dropdown-primary">
+                  <a class="dropdown-item" href="#"><i style="color: red;" class="fas fa-heart"></i> Favorite</a>
+                  <a class="dropdown-item" href="#"><i style="color: orange;" class="fas fa-flag"></i> Flag as duplicate</a>
+                  <a class="dropdown-item" href="#"><i style="color: green;" class="fas fa-pen"></i> Study Group</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            
+            <td>How do we help farms transition their businesses and what happens to all the millions of animals?</td>
+            <td class="text-center"> <span class="btn-fav badge badge-danger btn-circle">3</span></td>
+            <td class="text-center">
+              <div class="dropdown">
+                <button class="btn-action btn btn-sm btn-circle btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                <div class="dropdown-menu dropdown-primary">
+                  <a class="dropdown-item" href="#"><i style="color: red;" class="fas fa-heart"></i> Favorite</a>
+                  <a class="dropdown-item" href="#"><i style="color: orange;" class="fas fa-flag"></i> Flag as duplicate</a>
+                  <a class="dropdown-item" href="#"><i style="color: green;" class="fas fa-pen"></i> Study Group</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            
+            <td>How can we respectfully and effectively communicate with  environmentalists who don’t acknowledge animal agriculture’s role,  especially those fixed on rotational grazing</td>
+            <td class="text-center"> <span class="btn-fav badge badge-danger btn-circle">0</span></td>
+            <td class="text-center">
+              <div class="dropdown">
+                <button class="btn-action btn btn-sm btn-circle btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                <div class="dropdown-menu dropdown-primary">
+                  <a class="dropdown-item" href="#"><i style="color: red;" class="fas fa-heart"></i> Favorite</a>
+                  <a class="dropdown-item" href="#"><i style="color: orange;" class="fas fa-flag"></i> Flag as duplicate</a>
+                  <a class="dropdown-item" href="#"><i style="color: green;" class="fas fa-pen"></i> Study Group</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            
+            <td>How do we involve the education system into learning as part of curriculum and future careers?</td>
+            <td class="text-center"> <span class="btn-fav badge badge-danger btn-circle">10</span></td>
+            <td class="text-center">
+              <div class="dropdown">
+                <button class="btn-action btn btn-sm btn-circle btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                <div class="dropdown-menu dropdown-primary">
+                  <a class="dropdown-item" href="#"><i style="color: red;" class="fas fa-heart"></i> Favorite</a>
+                  <a class="dropdown-item" href="#"><i style="color: orange;" class="fas fa-flag"></i> Flag as duplicate</a>
+                  <a class="dropdown-item" href="#"><i style="color: green;" class="fas fa-pen"></i> Study Group</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+
+          
+
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
+</div> -->
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-12 text-center">
+       <h4 class="h4-responsive font-weight-bold mb-3">ECOLOGICAL NEW MODEL  </h4>
+       <img class="img-fluid z-depth-3" src="{{url_for('static',filename='img/Ecological+New+Model.jpg')}}">
+    </div>
+  </div>
+</div>
+
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h6 class="h6-responsive font-weight-bold mb-3">ECOLOGICAL NEW MODEL QUESTIONS: </h6>
+          <div class="section1"><form action="/questions_discuss/" method="post"><button class="btn btn-primary">Ask Question</button></form></div>
+      <table id="ecological2" class="table table-hover table-responsive-md btn-table">
+
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Favorite</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <div class="section1"><p>{{ques}}</p></div>
+        <div class="not-show" style="display: none;">{{allnews}}</div>
+        {%for i in allnews%}
+          <tr>
+            <td>
+            <p class="data-select1" name="data-select">{{i}}</p></td>
+            <td class="text-center"> <span class="btn-fav badge badge-danger btn-circle">5</span></td>
+            <td class="text-center">
+              <div class="dropdown">
+                <button class="btn btn-action btn-sm btn-circle btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                <div class="dropdown-menu dropdown-primary">
+                  <form method="post" action="/bookmarking_work/">
+                  <input type="text" name="data-select" style="display: none;" value="{{i}}">
+                  <button class="dropdown-item" name="bookmark"><i style="color: red;" class="fas fa-heart"></i> Favorite</button>
+                  <button class="dropdown-item" name="flag"><i style="color: orange;" class="fas fa-flag"></i> Flag as duplicate</button>
+                  <a class="dropdown-item" href="#"><i style="color: green;" class="fas fa-pen"></i> Study Group</a>
+                  </form>
+                </div>
+              </div>
+          </td>
+        </tr>
+        {%endfor%}
+
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<section class="container-fluid unique-color-dark py-5">
+  <div class="row">
+    <div class="col-md-12 text-center mt-3 text-white">
+      <h3 class="h3-responsive"><i class="fas fa-quote-left" aria-hidden="true"></i> Nothing is as powerful as an idea whose time has come <i class="fas fa-quote-right"
+            aria-hidden="true"></i></h3>
+      <h5 class="text-center font-italic mb-0">~ Victor Hugo</h5>
+  </div>
+</section>
+
+
+
+
+<!-- Footer -->
+<footer class="page-footer font-small primary-color">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-4 offset-md-4 pt-5">
+            <div class="row text-center">
+              <div class="col-md-12"> 
+                <a class="mr-5" href="https://www.facebook.com/groups/445002692519792">
+                  <i class="fab fa-facebook-f fa-lg white-text fa-2x"> </i>
+                </a>
+                <a class="mr-5" href="https://twitter.com/PreventYear">
+                  <i class="fab fa-twitter fa-lg white-text fa-2x"> </i>
+                </a>
+                <a href="http://instagram.com/veganworld2026">
+                  <i class="fab fa-instagram fa-lg white-text fa-2x"> </i>
+                </a>
+              </div>
+              </div>
+        </div>
+
+    </div>
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 offset-md-3 py-5">
+        <div class="text-center">
+
+
+         <div class="row text-center">
+          <div class="nav-link col-md-4">
+            <a class="text-white text-uppercase font-weight-bold" href="about.html">About</a>
+          </div>
+          <div class="nav-link col-md-4">
+            <a class="text-white text-uppercase font-weight-bold" href="support.html">Support</a>
+          </div>
+          <div class="nav-link col-md-4">
+            <a class="text-white text-uppercase font-weight-bold" href="privacy.html">Privacy</a>
+          </div>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright py-3 text-center text-white">Made with <i class="fa fa-2x fa-heart"></i> in India</div>
+  <div class="footer-copyright text-center pb-3">Designed By
+    <a href="https://rohitswami.com/"> Rohit Swami</a>
+  </div>
+
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="{{url_for('static',filename='js/jquery-3.4.0.min.js')}}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{{url_for('static',filename='js/popper.min.js')}}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{{url_for('static',filename='js/mdb.min.js')}}"></script>
+
+  <script type="text/javascript" src="{{url_for('static',filename='js/addons/datatables.min.js')}}"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#ecological1').DataTable();
+      $('#ecological2').DataTable();
+      $('.dataTables_length').addClass('bs-select');
+    });
+  </script>
+</body>
+
+</html>

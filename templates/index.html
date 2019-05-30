@@ -1,28 +1,450 @@
 <!DOCTYPE html>
-<html>
-<title>
-Quiz
-</title>
+<html lang="en">
+
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<style>
-.section1{
-	width: 100%;
-	font-family: "Poppins";
-}
-.btn{
-	width: 100%;
-	margin-top:15px;
-	text-align: center;
-	outline: 0;
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Home - Vegan World 2026!  </title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',filename='css/mdb.min.css') }}" rel="stylesheet">
+  <link rel="shortcut icon" href="{{url_for('static',filename='img/favicon.ico') }}" type="image/x-icon">
+  <link rel="icon" href="{{url_for('static',filename='img/favicon.ico') }}" type="image/x-icon">
+  <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet">
+  <meta name="theme-color" content="#4285F4">
+  <style type="text/css">
+    html,
+    body,
+    header,
+    .view {
+      height: 93%;
+    }
+
+    .slider-item {
+      margin-top: 15%;
+    }
+
+    @media (max-width: 740px) {
+      html,
+      body,
+      header,
+      .view {
+        height: 80vh;
+      }
+      .slider-item {
+      margin-top: 45%;
+    }
+    }
+
+    .top-nav-collapse {
+      background-color: #4285F4 !important;
+    }
+
+    .navbar:not(.top-nav-collapse) {
+      background: transparent !important;
+    }
+
+    @media (max-width: 991px) {
+      .navbar:not(.top-nav-collapse) {
+        background:#4285F4 !important;
+      }
+    }
+  </style>
+
 </head>
+
 <body>
+
+<header>
+<nav class="navbar navbar-expand-lg  navbar-dark primary-color fixed-top scrolling-navbar">
+  <a class="navbar-brand" href="/">
+    <img src="{{ url_for('static',filename='img/logo.png')}}" height="80" alt="vegan world 2026 logo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/overview/">Overview</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/ecological/">Ecological</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/economic/">Economic</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/political/">Political</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/social/">Social</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/spiritual/">Spiritual</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/study_group/">Study Groups</a>
+      </li>
+      <li class="nav-item">
+        <a href="/join_us/">
+        <button class="btn-join-us btn btn-amber btn-sm waves-effect font-weight-bold" type="button">Join Us!</button>
+      </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<!-- Full Page Intro -->
+          <div class="view" style="background-image: url('img/vegan-fest.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+            <!-- Mask & flexbox options-->
+            <div class="mask rgba-gradient align-items-center">
+              <!-- Content -->
+              <div class="container">
+                <!--Grid row-->
+                <div class="row">
+                  <!--Grid column-->
+                  <div class="col-md-12 mb-4 white-text text-center slider-item">
+                    <h5 class="white-text wow fadeInDown" data-wow-delay="0.4s"><strong>The Moonshot of Our Generation!...</strong></h5>
+                    <hr class="hr-light my-40 wow fadeInDown" data-wow-delay="0.4s">
+                    <h1 class="h1-reponsive display-4 white-text text-uppercase font-weight-bold mb-0 pt-md-3 pb-md-3 wow fadeInDown" data-wow-delay="0.3s"><strong>VEGAN WORLD 2026!</strong></h1>                    
+                    <a href="/overview/" class="btn btn-circle btn-amber wow fadeInDown" data-wow-delay="0.4s">Learn More</a>
+                  </div>
+                  <!--Grid column-->
+                </div>
+                <!--Grid row-->
+              </div>
+              <!-- Content -->
+            </div>
+            <!-- Mask & flexbox options-->
+          </div>
+          <!-- Full Page Intro -->
+
+</header>
+
+
 <div class="container">
-		<div class="section1"><form action="/login_registration/" method="post"><button class="btn btn-warning">Login/Register</button></form></div>
+  <div class="row">
+    <div class="col-md-12 text-center mt-3">
+      <h3 class="h3-responsive"><i class="fas fa-quote-left" aria-hidden="true"></i> When you change the way you look at things, the things you look at change <i class="fas fa-quote-right"
+            aria-hidden="true"></i></h3>
+      <h5 class="text-center font-italic mb-0">~ Wayne Dyer</h5>
+    </div>
+  </div>
 </div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 mt-5 mb-5">
+      <div class="embed-responsive embed-responsive-21by9 z-depth-3">
+        <iframe src="https://www.youtube.com/embed/Zzfq2AAYn38" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 text-center">
+      <hr class="hr-title text-primary my-40 wow fadeInDown mb-4" data-wow-delay="0.4s">
+      <h4 class="h4-reponsive title font-weight-bold text-uppercase">FIVE OF THE SIX QUESTIONS ABOUT VEGAN WORLD 2026 ARE EASILY ANSWERABLE…</h4>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7 offset-md-3 text-left text-uppercase mt-4 mb-5">
+        <img class="img-fluid" src="{{url_for('static',filename='img/issues.png')}}">
+      </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 text-center">
+      <h4 class="h4-reponsive title font-weight-bold text-uppercase">THE ONLY QUESTION LEFT IS “HOW”?</h4>
+      <h6 class="h6-responsive title font-weight-normal text-uppercase mt-2 mb-4">VEGAN WORLD 2026 IS AN OPEN SOURCE STANDARDS PROCESS TO ANSWER THIS QUESTION</h6>
+    </div>
+  </div>
+</div>
+
+<!-- 1st Item -->
+<section class="container my-5">
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-lg-5">
+      <!-- Featured image -->
+      <div class=" overlay blog-img z-depth-2 mb-lg-0 mb-4">
+        <img class="img-fluid" src="{{url_for('static',filename='img/Karech+2008.jpg')}}" alt="Sample image">
+      </div>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-7 blog-text-8 text-center">
+      <!-- Category -->
+      <a class="green-text">
+        <h6 class="font-weight-bold mb-3"><i class="fab fa-pagelines"></i> Ecological Principles</h6>
+      </a>
+      <p>How do we manage human impact on the ecosystems of the planet?</p>
+      <!-- Post data -->
+      <!-- Read more button -->
+      <a href="/ecological/" class="btn btn-success btn-circle btn-md">Read more</a>
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+</section>
+
+<hr class="my-5">
+
+
+
+<!-- 2nd Item -->
+<section class="container my-5">
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-lg-7 blog-text-5 text-center mb-4">
+      <!-- Category -->
+      <a class="pink-text">
+        <h6 class="font-weight-bold mb-3"><i class="fas fa-globe-americas"></i> Economic Principles</h6>
+      </a>
+      <p>How do we manage human impact on the ecosystems of the planet?</p>
+      <!-- Post data -->
+      <!-- Read more button -->
+      <a href="/economic/" class="btn btn-pink btn-circle btn-md">Read more</a>
+    </div>
+    <!-- Grid column -->
+    
+    <!-- Grid column -->
+    <div class="col-lg-5">
+      <!-- Featured image -->
+      <div class=" overlay blog-img z-depth-2 mb-lg-0 mb-4">
+        <img class="img-fluid" src="{{url_for('static',filename='img/Line+for+Vegan+Food.jpg')}}" alt="Sample image">
+      </div>
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+</section>
+
+<hr class="mb-5">
+
+
+<!-- 3rd Item -->
+<section class="container my-5">
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-lg-5">
+      <!-- Featured image -->
+      <div class=" overlay blog-img z-depth-2 mb-lg-0 mb-4">
+        <img class="img-fluid" src="{{url_for('static',filename='img/Doughnut+Economics.jpg')}}" alt="Sample image">
+      </div>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-7 blog-text-12 text-center ">
+      <!-- Category -->
+      <a class="indigo-text">
+        <h6 class="font-weight-bold mb-3"><i class="far fa-handshake"></i> Political Principles</h6>
+      </a>
+      <p>How do we make decisions for the common good of nature and humanity?</p>
+      <!-- Post data -->
+      <!-- Read more button -->
+      <a href="/political/" class="btn btn-indigo btn-success btn-circle btn-md">Read more</a>
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+</section>
+
+<hr class="my-5">
+
+<!-- 4th Item -->
+<section class="container my-5">
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-lg-7 blog-text-8 text-center mb-4">
+      <!-- Category -->
+      <a class="cyan-text">
+        <h6 class="font-weight-bold mb-3"><i class="fas fa-heart"></i> Social Principles</h6>
+      </a>
+      <p>How do we manage our relationships with each other and with nature?</p>
+      <!-- Post data -->
+      <!-- Read more button -->
+      <a href="/social/" class="btn btn-cyan btn-circle btn-md">Read more</a>
+    </div>
+    <!-- Grid column -->
+    
+    <!-- Grid column -->
+    <div class="col-lg-5">
+      <!-- Featured image -->
+      <div class=" overlay blog-img z-depth-2 mb-lg-0 mb-4">
+        <img class="img-fluid" src="{{url_for('static',filename='img/Group+Hug+2.jpg')}}" alt="Sample image">
+      </div>
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+</section>
+
+<hr class="mb-5">
+
+
+<!-- 5th Item -->
+<section class="container my-5">
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-lg-5">
+      <!-- Featured image -->
+      <div class=" overlay blog-img z-depth-2 mb-lg-0 mb-4">
+        <img class="img-fluid" src="{{url_for('static',filename='img/APRC-printable.jpg')}}" alt="Sample image">
+      </div>
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-7 blog-text-12 text-center ">
+      <!-- Category -->
+      <a class="amber-text">
+        <h6 class="font-weight-bold mb-3"><i class="fas fa-praying-hands"></i> Spiritual Principles</h6>
+      </a>
+      <p>How do we ensure that generations to come will preserve the sacredness of life on Earth?</p>
+      <!-- Post data -->
+      <!-- Read more button -->
+      <a href="/spiritual/" class="btn btn-amber btn-success btn-circle btn-md">Read more</a>
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+</section>
+<hr>
+
+<section class="container pt-5 mt-5 text-center">
+ 
+  <h6 class="h6-responsive title font-weight-normal text-uppercase">VIDEO OF THE VEGAN WORLD 2026 CONFERENCE INAUGURATION IN MESA, AZ, OCT 26 2018</h6>
+  <hr class="hr-title text-primary wow fadeInDown" data-wow-delay="0.4s">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 mt-5 mb-5">
+      <div class="embed-responsive embed-responsive-21by9 z-depth-3">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/PtYkqITRvpw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container-fluid unique-color-dark py-5">
+  <div class="row">
+    <div class="col-md-12 text-center mt-3 text-white">
+      <h3 class="h3-responsive"><i class="fas fa-quote-left" aria-hidden="true"></i> Nothing is as powerful as an idea whose time has come <i class="fas fa-quote-right"
+            aria-hidden="true"></i></h3>
+      <h5 class="text-center font-italic mb-0">~ Victor Hugo</h5>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer class="page-footer font-small primary-color">
+
+  <!-- Footer Elements -->
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-4 offset-md-4 pt-5">
+            <div class="row text-center">
+              <div class="col-md-12"> 
+                <a class="mr-5" href="https://www.facebook.com/groups/445002692519792">
+                  <i class="fab fa-facebook-f fa-lg white-text fa-2x"> </i>
+                </a>
+                <a class="mr-5" href="https://twitter.com/PreventYear">
+                  <i class="fab fa-twitter fa-lg white-text fa-2x"> </i>
+                </a>
+                <a href="http://instagram.com/veganworld2026">
+                  <i class="fab fa-instagram fa-lg white-text fa-2x"> </i>
+                </a>
+              </div>
+              </div>
+        </div>
+
+    </div>
+    <!-- Grid row-->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 offset-md-3 py-5">
+        <div class="text-center">
+
+
+         <div class="row text-center">
+          <div class="nav-link col-md-4">
+            <a class="text-white text-uppercase font-weight-bold" href="about.html">About</a>
+          </div>
+          <div class="nav-link col-md-4">
+            <a class="text-white text-uppercase font-weight-bold" href="support.html">Support</a>
+          </div>
+          <div class="nav-link col-md-4">
+            <a class="text-white text-uppercase font-weight-bold" href="privacy.html">Privacy</a>
+          </div>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright py-3 text-center text-white">Made with <i class="fa fa-2x fa-heart"></i> in India</div>
+  <div class="footer-copyright text-center pb-3">Designed By
+    <a href="https://rohitswami.com/"> Rohit Swami</a>
+  </div>
+
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="{{url_for('static',filename='js/jquery-3.4.0.min.js')}}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{{url_for('static',filename='js/popper.min.js')}}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{{url_for('static',filename='js/mdb.min.js')}}"></script>
 </body>
+
 </html>
