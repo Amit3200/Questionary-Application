@@ -1,0 +1,105 @@
+
+.nav-link, .dropdown-item {
+	font-size: 13px !important;
+}
+
+.btn-join-us {
+	border-radius: 25px;
+	font-size: 13px !important;
+}
+
+.btn-circle {
+	border-radius: 25px;
+}
+
+.navbar-nav li {
+	margin-right: 10px;
+}
+
+.dropdown-item {
+	margin-top: -8px;
+}
+
+
+
+h1 {
+  letter-spacing: 8px;
+}
+
+h5 {
+  letter-spacing: 3px;
+}
+
+.title {
+	letter-spacing: 3px;
+	color: #393939;
+}
+
+.hr-light {
+  border-top: 3px solid #fff;
+  width: 80px;
+}
+
+.title-answer {
+	color: #4285F4;
+}
+
+.hr-title {
+	border-top: 4px solid #4285F4;
+	width: 20%;
+}
+
+.rgba-gradient {
+  background: -moz-linear-gradient(45deg, rgba(34,139,34, 0.8),rgba(66, 133, 244, 0.8)  100%);
+  background: -webkit-linear-gradient(45deg, rgba(34,139,34, 0.8),rgba(66, 133, 244, 0.8)  100%);
+  background: -webkit-gradient(linear, 45deg, from(rgba(34,139,34, 0.7) to(rgba(66, 133, 244, 0.8))));
+  background: -o-linear-gradient(45deg, rgba(34,139,34, 0.8), rgba(66, 133, 244,0.8) 100%);
+  background: linear-gradient(to 45deg, rgba(34,139,34, 0.8),rgba(66, 133, 244, 0.8)  100%);
+}
+
+.navbar-toggler-icon {
+	color: white !important;
+}
+
+.blog-img, .blog-img img {
+	border-radius: 15px;
+}
+
+
+.blog-text-8 {
+	margin-top: 8%;
+}
+
+.blog-text-5 {
+	margin-top: 5%;
+}
+
+.blog-text-12 {
+  margin-top: 12%;
+}
+
+
+.space {
+	margin-top: 140px;
+}
+
+@media (max-width: 991px) {
+      .space {
+	margin-top: 140px;
+}
+    }
+
+
+.list-group-item {
+	padding: 7px 10px !important;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.btn-fav {
+	padding: 5px 8px;
+}
+
+.btn-action {
+	padding: 5px 11px !important;
+}
