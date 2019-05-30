@@ -15,70 +15,9 @@ def main_page():
 
 @app.route("/login_registration/",methods=["POST"])
 def login_registration():
-    return render_template("login.html",value="")
-
-@app.route("/overview/")
-def overview():
-    return render_template("overview.html")
-
-@app.route("/ecological/")
-def ecological():
-    cur = mysql.connection.cursor()
-    cur.execute("Select * from questions where category='ecological'")
-    records=cur.fetchall()
-    questions=[]
-    for row in records:
-            questions.append(row[1])
-    print(questions)
-    mysql.connection.commit()
-    cur.close()
-    d={"allnews":questions}
-    return render_template("ecological.html",**d)
-
-@app.route("/economic/")
-def economic():
-    return render_template("economic.html")
-
-@app.route("/political/")
-def political_1():
-    return render_template("political.html")
-
-@app.route("/social/")
-def social():
-    return render_template("social.html")
-
-@app.route("/spiritual/")
-def spiritual():
-    return render_template("spiritual.html")
-
-@app.route("/join_us/")
-def join_us():
-    return render_template("join_us.html")
-
-@app.route("/study_group/")
-def study_group():
-    return render_template("study_group.html")
-
-@app.route("/sign-in/")
-def sign_in():
-    return render_template("sign-in.html")
-
-@app.route("/sign-up/")
-def sign_up():
-    return render_template("sign-up.html")
-#am
-#it
-#add
-#32
-#00
-#proof
-
-
-@app.route("/political/",methods=["POST"])
-def political():
     #show all the questions here
     #book mark schema
-    return render_template("political.html",value="")
+    return render_template("login.html",value="")
 
 @app.route("/register_registration/",methods=["POST","GET"])
 def register_registration():
@@ -114,10 +53,13 @@ def register():
         mysql.connection.commit()
         cur.close()        
         print(firstname,secondname,userid,pass1)#delete after verification
-        return render_template("sign-up.html",value="Account Created Successfully, Kindly proceed with login")
+        return render_template("login.html",value="Account Created Successfully, Kindly proceed with login")
 
 @app.route("/ecological_discuss/",methods=["POST"])
 def ecological_discuss():
+    #show all the questions here
+    #book mark schema
+    #session check
     if "username" in session:
         cur = mysql.connection.cursor()
         cur.execute("Select * from questions")
@@ -135,38 +77,37 @@ def ecological_discuss():
 
 @app.route("/questions_discuss/",methods=["POST","GET"])
 def questions_discuss():
-    if "username" in session or True: #tobe changed
+    if "username" in session:
         return render_template("adding_questions.html")
     else:
         return render_template("login.html",value="")
 
 @app.route("/add_questions/",methods=["POST","GET"])
-def add_questions(): #for_ecological
-    if "username" in session or True:    
+def add_questions():
+    if "username" in session:    
         if(request.method=="POST"):
-            s="Unknown"
-            if "username" in session:
-                s=session["username"]
             questions_fetched=request.form['questions']
+            #add session checking
             print(questions_fetched) #add in the database with the timestamp and other things
             cur = mysql.connection.cursor()
             #print('Insert into questions(question) values("'+questions_fetched+'")')
-            cur.execute('Insert into questions(question,category,userid) values(%s,%s,%s);',(questions_fetched,"ecological",s))
+            cur.execute('Insert into questions(question) values("'+questions_fetched+'")')
             mysql.connection.commit()
             cur.close()
             cur1 = mysql.connection.cursor()
-            cur1.execute("Select * from questions where category='ecological' order by qid desc")
+            cur1.execute("Select * from questions")
             records=cur1.fetchall()
             questions=[]
             for row in records:
                 questions.append(row[1])
             print(questions)
             cur1.close()
-            d={"allnews":questions}
-            #return render_template("question_activity_layout.html",**d)
-            return render_template("ecological.html",**d)
+            d={"name":"Amit","subject":"Ecological","ques":questions_fetched,"allnews":questions}
+            return render_template("question_activity_layout.html",**d)
     else:
-        return "Login Required"
+        return render_template("login.html",value="")
+        
+
 @app.route("/discussion_board/",methods=["POST"])
 def discussion_board():
     if "username" in session:
@@ -187,12 +128,9 @@ def add_suggestion():
 def bookmarking_work():
     #add the variable session
     print("reached")
-    if "username" in session or True:
+    if "username" in session:
         if request.method=="POST":
             if "bookmark" in request.form:
-                s="Unknown"
-                if "username" in session:
-                    s=session["username"]
                 bookmarked_question=request.form['data-select']
                 cur1 = mysql.connection.cursor()
                 cur1.execute('select * from questions where question="'+bookmarked_question+'"')
@@ -200,19 +138,16 @@ def bookmarking_work():
                 qid=records[0][0]
                 userid=records[0][4]
                 category=records[0][3]
-                #print(records)
+                print(records)
                 cur1.close()
-                #print(bookmarked_question,qid,userid,category)
+                print(bookmarked_question,qid,userid,category)
                 cur = mysql.connection.cursor()
-                cur.execute('Insert into bookmarked(question,userid,qid,category) values(%s,%s,%s,%s)',(bookmarked_question,s,qid,category))
+                cur.execute('Insert into bookmarked(question,userid,qid,category) values(%s,%s,%s,%s)',(bookmarked_question,userid,qid,category))
                 mysql.connection.commit()
                 cur.close()
-                return render_template("fav_inter.html",value=bookmarked_question)
+                return bookmarked_question
             if "flag" in request.form:
-                #print("flagged")
-                s="Unknown"
-                if "username" in session:
-                    s=session["username"]
+                print("flagged")
                 if request.method=="POST":
                     flag_question=request.form['data-select']
                     cur1 = mysql.connection.cursor()
@@ -221,17 +156,16 @@ def bookmarking_work():
                     qid=records[0][0]
                     userid=records[0][4]
                     category=records[0][3]
-                    #print(records)
+                    print(records)
                     cur1.close()
-                    #print(flag_question,qid,userid,category)
+                    print(flag_question,qid,userid,category)
                     cur = mysql.connection.cursor()
-                    cur.execute('Insert into flagged(question,userid,qid,category) values(%s,%s,%s,%s)',(flag_question,s,qid,category))
+                    cur.execute('Insert into flagged(question,userid,qid,category) values(%s,%s,%s,%s)',(flag_question,userid,qid,category))
                     mysql.connection.commit()
                     cur.close()
-                    #print("marked")
-                    #print(flag_question)
-                    return render_template("flag_inter",value=flag_question)
-                return "Error"
+                    print("marked")
+                    print(flag_question)
+                return "flagged"
     else:
         return render_template("login.html",value="")
     
