@@ -23,7 +23,7 @@
 <header>
 <nav class="navbar navbar-expand-lg  navbar-dark primary-color fixed-top scrolling-navbar">
   <a class="navbar-brand" href="index.html">
-    <img src="img/logo.png" height="80" alt="vegan world 2026 logo">
+    <img src="{{url_for('static',filename='img/logo.png')}}" height="80" alt="vegan world 2026 logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,13 +40,13 @@
       <li class="nav-item">
         <a class="nav-link text-white text-uppercase font-weight-bold" href="/ecological/">Ecological</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link text-white text-uppercase font-weight-bold" href="/economic/">Economic</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white text-uppercase font-weight-bold" href="/political/">Political</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link text-white text-uppercase font-weight-bold" href="/social/">Social</a>
       </li>
       <li class="nav-item">
@@ -68,7 +68,7 @@
 <div class="container space">
   <div class="row">
     <div class="col-md-7">
-      <img class="img-fluid z-depth-3" src="img/Day+2+3.jpeg">
+      <img class="img-fluid z-depth-3" src="{{url_for('static',filename='img/Day+2+3.jpeg')}}">
     </div>
     <div class="col-md-5">
       <h6 class="h6-responsive font-weight-bold mb-3">SOCIAL PRINCIPLES:</h6>
@@ -98,8 +98,9 @@
   <div class="row">
     <div class="col-md-12 text-center">
        <h4 class="h4-responsive font-weight-bold mb-3">SOCIAL SHIFT </h4>
-       <img class="img-fluid z-depth-3" src="img/Social+Shift+Questions+1.jpg">
+       <img class="img-fluid z-depth-3" src="{{url_for('static',filename='img/Social+Shift+Questions+1.jpg')}}">
     </div>
+              <div class="section1"><form action="/questions_discuss/" method="post"><input type="text" name="category" value="social" style="display: none"><button class="btn btn-primary">Ask Question</button></form></div>
   </div>
 </div>
 
@@ -107,63 +108,43 @@
   <div class="row">
     <div class="col-md-12">
       <h6 class="h6-responsive font-weight-bold mb-3">SOCIAL SHIFT QUESTIONS: </h6>
-      <p>
-        1. How do we end toxic masculinity and its association with “meat”? - <a href="study_group.html">Gender Roles Study Group</a><br>
-2. How do we create laws/legislation for sentient beings? <br>
-3. How can we unify Vegans and end infighting? - <a href="study_group.html">Unifying Vegans Study Group</a><br>
-4. How do we build solidarity among the Vegan community as well as with other social justice groups? <br>
-5. How do we get communities, especially the under-privileged, to see the benefits of a plant-based lifestyle, especially the price of health, lifestyle ailments, disability, sick children and other expenses and financial problems? <br>
-6. How do we reach women? <br>
-7. How can we build our prototype vegan communities - start them in various locations and use/promote them as the model?<br>
-8. Should we support small animal welfare reforms or only a movement for immediate abolition of animal exploitation?<br> 
-9. How can we create a safe platform for children who want to choose this lifestyle, yet or opposed by the system or parents? <br>
-10. How are we going to be the voice that will effect social, political and fundamental change in our world system of violence? <br>
-11. How do we transform from the current Animal Whites movement to the all-inclusive Animal Rights movement and abolish systematic racism? <br>
-12. How do we reach women who live within oppressive religious systems? <br>
-13. How do we follow up with those persons who are still consuming animal products after they have attended a vigil/bearing witness and making the connection? <br>
-14. How can we get more Vegans to be activists? <br>
-15. How can we create a huge cross-movement movement that is inclusive of reducitarians, vegetarians, environmentalists, animal rights activists, whole-food plant-based people and others, so that we have critical mass?<br> 
-16. How can we get more people to focus on animal liberation instead of just animal welfarism? <br>
-17. How do we create inclusiveness and let go of separation? <br>
-18. How do we get other/all social activists to see the connections to the exploitation of animals?<br>
-19. How do we move it forward as a political movement, inclusive of Vegetarians also? <br>
-20. How do we promote social responsibility? <br>
-21. How can we become more loving Vegans and learn to respect those who are not yet Vegan? <br>
-22. How can we get beyond people’s conditioning and programs of reality and help them seek more knowledge and consciousness that will change their perceptions and choices? <br>
-23. How do we diminish fears of prejudice in pre-vegans without compromising our fundamental message of respecting the rights of other animals? <br>
-24. How do we help the world’s hungry go Vegan? <br>
-25. How can we be culturally sensitive while traveling? <br>
-26. How do we educate people effectively about PROTEIN so they won’t worry about deficiency? <br>
-27. How will Ahimsa Coin allocate to the disabled, etc.? <br>
-28. How do we convey Veganism is more than a personal choice - it’s a moral choice? <br>
-29. What can we do to create collaboration and coalitions among vegan groups that stand as a strong force that is acknowledged and a powerful presence? <br>
-30. How do we build a resource-based economy? <br>
-31. How do we get people to align their ethics and values with their actions?<br>
-32. How do we create/build empathy? <br>
-33. How do we respond to pushback? <br>
-34. How do we help aspiring Vegans to not feel excluded/misunderstood by their families? <br>
-35. How do we infiltrate anti-Vegan propaganda? <br>
-36. How do we get the attention of the masses? <br>
-37. How do we promote Veganism through the cooperatives movement? <br>
-38. How do we develop an effective VECOTourism system? <br>
-39. How do we define “Vegan to other “vegans” to establish unity within the communities of activists and non-activists? <br>
-40. How do we get new Vegans from relapsing? <br>
-41. How do we get politicians whose platform is Veganism? <br>
-42. How do we reach young children effectively and raise awareness without sugarcoating the realities? <br>
-43. Democracy, anyone? Why can’t national/international/local Vegan groups accommodate this social form? <br>
-44. How do we end unconscious consumerism? <br>
-45. How do we change habits? <br>
-46. How do we let go of acquiring property? <br>
-47. What is the appropriate response to those who see nothing wrong with killing/exploiting animals? <br>
-48. How do we make different Vegan groups support each other? <br>
-49. How do we set boundaries and rules on allowing animal products in your home from guests? <br>
-50. How can we get more Vegans to become animal rights activists? <br>
-51. How can we unite all social movements to embrace Veganism? <br>
-52. What program management method or framework do we use to develop, monitor and control our plan for Vegan World 2026? Agile, PMI, Lean? <br>
-53. How do we best identify and utilize fellow vegans (and non-Vegans) talents in our revolution? <br>
+      <table id="ecological2" class="table table-hover table-responsive-md btn-table">
 
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Favorite</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
 
-      </p>
+        <tbody>
+        <div class="section1"><p>{{ques}}</p></div>
+        <div class="not-show" style="display: none;">{{new1}}</div>
+        {%for i in new1%}
+          <tr>
+            <td>
+            <p class="data-select1" name="data-select">{{i}}</p></td>
+            <td class="text-center"> <span class="btn-fav badge badge-danger btn-circle">5</span></td>
+            <td class="text-center">
+              <div class="dropdown">
+                <button class="btn btn-action btn-sm btn-circle btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                <div class="dropdown-menu dropdown-primary">
+                  <form method="post" action="/bookmarking_work/">
+                  <input type="text" name="data-select" style="display: none;" value="{{i}}">
+                  <button class="dropdown-item" name="bookmark"><i style="color: red;" class="fas fa-heart"></i> Favorite</button>
+                  <button class="dropdown-item" name="flag"><i style="color: orange;" class="fas fa-flag"></i> Flag as duplicate</button>
+                  <a class="dropdown-item" href="#"><i style="color: green;" class="fas fa-pen"></i> Study Group</a>
+                  </form>
+                </div>
+              </div>
+          </td>
+        </tr>
+        {%endfor%}
+        </tbody>
+
+      </table>
     </div>
   </div>
 </div>
@@ -172,7 +153,7 @@
   <div class="row">
     <div class="col-md-12 text-center">
        <h4 class="h4-responsive font-weight-bold mb-3">SOCIAL NEW MODEL  </h4>
-       <img class="img-fluid z-depth-3" src="img/Social+New+Model.jpg">
+       <img class="img-fluid z-depth-3" src="{{url_for('static',filename='img/Social+New+Model.jpg')}}">
     </div>
   </div>
 </div>
@@ -182,34 +163,44 @@
   <div class="row">
     <div class="col-md-12">
       <h6 class="h6-responsive font-weight-bold mb-3">SOCIAL NEW MODEL QUESTIONS: </h6>
-      <p>
-        1. How do we create a system in which everyone is thriving? - <a href="study_group.html">Thriving Systems Study Group</a><br>
-2. How do we create an environment of racial equality and mutual respect? <br>
-3. Do we have prisons in a Vegan World or have they been transformed? <br>
-4. How do we get people to become more self-reliant and do more for themselves in terms of establishing personal and communal food systems, cutting out corporate/government middle men, and establishing their own relationship with the Earth? <br>
-5. How do we transition to a culture of normalized nonviolence? <br>
-6. How do we deal with animals eating crops and gardens? <br>
-7. How do we relate with those who are violent (mental health issues)? <br>
-8. How do we create equality so that there is no dominant race? <br>
-9. How do we transform billions of acres into food forests, rewilded lands, Veganic agriculture and sanctuaries of all kinds? <br>
-10. How do we transform the Vegan community to EcoVegans caring for the environment as well as the animals? <br>
-11. How do we create communities of racial, ethical, religious acceptance and belonging? <br>
-12. How do we get everyone to be treated equally? <br>
-13. How do we avoid recreating discrimination and classism, this time based on how Vegan someone is? <br>
-14. How can we sustain a supportive Vegan community without internal conflict? <br>
-15. How do we get people to work as a team and take on equitable work? <br>
-16. How do we create self-organizing teams who follow through on their commitments? <br>
-17. How do we handle a situation with an animal being violent toward humans? <br>
-18. How do we instill self-esteem in our young to counter years of programming of violence? <br>
-19. How do we get animal rights activists to become holistic vegans for health, environment, ethics, mindfulness, zero waste, etc.? <br>
-20. How do we end the male machismo and make it socially acceptable for men to be compassionate and nonviolent? <br>
-21. What are we going to do to get all the millions of meat restaurant owners to become Vegan? <br>
-22. How do we all live apart from the current normalized violent society? <br>
-23. How do we establish social and economic equality? How much equality? <br>
-24. How do we clean up the landfills and toxicity? <br>
-25. How do we help people and animals to heal from the trauma of the past? <br>
-26. How do we redesign our education, healthcare and other key systems? <br>
-      </p>
+
+      <table id="ecological2" class="table table-hover table-responsive-md btn-table">
+
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Favorite</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <div class="section1"><p>{{ques}}</p></div>
+        <div class="not-show" style="display: none;">{{allnews}}</div>
+        {%for i in allnews%}
+          <tr>
+            <td>
+            <p class="data-select1" name="data-select">{{i}}</p></td>
+            <td class="text-center"> <span class="btn-fav badge badge-danger btn-circle">5</span></td>
+            <td class="text-center">
+              <div class="dropdown">
+                <button class="btn btn-action btn-sm btn-circle btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                <div class="dropdown-menu dropdown-primary">
+                  <form method="post" action="/bookmarking_work/">
+                  <input type="text" name="data-select" style="display: none;" value="{{i}}">
+                  <button class="dropdown-item" name="bookmark"><i style="color: red;" class="fas fa-heart"></i> Favorite</button>
+                  <button class="dropdown-item" name="flag"><i style="color: orange;" class="fas fa-flag"></i> Flag as duplicate</button>
+                  <a class="dropdown-item" href="#"><i style="color: green;" class="fas fa-pen"></i> Study Group</a>
+                  </form>
+                </div>
+              </div>
+          </td>
+        </tr>
+        {%endfor%}
+        </tbody>
+
+      </table>
     </div>
   </div>
 </div>
@@ -299,14 +290,15 @@
 
 
   <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/jquery-3.4.0.min.js')}}"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/popper.min.js')}}"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/mdb.min.js')}}"></script>
+
+  <script type="text/javascript" src="{{url_for('static',filename='js/addons/datatables.min.js')}}"></script>
 </body>
 
 </html>

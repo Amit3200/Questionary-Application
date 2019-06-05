@@ -22,7 +22,7 @@
 <header>
 <nav class="navbar navbar-expand-lg  navbar-dark primary-color fixed-top scrolling-navbar">
   <a class="navbar-brand" href="index.html">
-    <img src="img/logo.png" height="80" alt="vegan world 2026 logo">
+    <img src="{{url_for('static',filename='img/logo.png')}}" height="80" alt="vegan world 2026 logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,7 +67,7 @@
 <div class="container space">
   <div class="row">
     <div class="col-md-7">
-      <img class="img-fluid z-depth-3" src="img/Day+2+2.jpeg">
+      <img class="img-fluid z-depth-3" src="{{url_for('static',filename='img/Day+2+2.jpeg')}}">
     </div>
     <div class="col-md-5">
       <h6 class="h6-responsive font-weight-bold mb-3">ECONOMIC PRINCIPLES:</h6>
@@ -91,10 +91,12 @@
 
 <div class="container my-5">
   <div class="row">
+
     <div class="col-md-12 text-center">
        <h4 class="h4-responsive font-weight-bold mb-3">ECONOMIC SHIFT </h4>
-       <img class="img-fluid z-depth-3" src="img/Economic+Shift+Questions.jpg">
+       <img class="img-fluid z-depth-3" src="{{ url_for('static',filename='img/Economic+Shift+Questions.jpg')}}">
     </div>
+              <div class="section1"><form action="/questions_discuss/" method="post"><input type="text" name="category" value="economic" style="display: none"><button class="btn btn-primary">Ask Question</button></form></div>
   </div>
 </div>
 
@@ -102,33 +104,43 @@
   <div class="row">
     <div class="col-md-12">
       <h6 class="h6-responsive font-weight-bold mb-3">ECONOMIC SHIFT QUESTIONS: </h6>
-      <p>
-        1. How do we replace capitalism with a more sustainable and equitable system? And what is that system? - <a href="study_group.html">Compassionate Commerce Study Group </a><br>
-2.  How do we structure a healthcare system that incentivizes health creation, health promotion and positive health outcomes instead of just paying for expensive and ineffective drug and surgical interventions? <br>
-3.  How do we change the current food subsidy system that artificially props up Animal Ag? Do we remove all subsidies and let the free market support healthy sustainable food, do we incentivize whole plant foods,  or is there a third alternative? - <a href="study_group.html">Ending Subsidies Study Group</a><br>
-4. How will we provide jobs for those leaving slaughterhouses and other animal harming jobs? - <a href="study_group.html">Changing Jobs Study Group </a><br>
-5. How do we give vegan business ideas a strong opportunity to flourish? <br>
-6.  How do we navigate having a livable income with wanting to do vegan  activism full time AND wanting to provide nutrition education, food  demos and coaching to anyone at no charge … while knowing that many do  not VALUE what they have not invested money into? <br>
-7. How do we transform the tremendous power currently being used to exploit by the system of industries and corporations that benefit by animal ag and its  ill effects on human health (animal ag, processed food, pharmaceuticals,  medicine, weight loss, etc.)? <br>
-8. How to build resource based communities, end capitalism and money? <br>
-9. How do we change from an ownership model to a stewardship model? <br>
-10. How do we structure, implement and advocate for a carbon tax on food?<br>
-11. How do we keep the most powerful from over taking us? <br>
-12.  How can we put all vegan businesses in under one roof which will  encourage them to start more and consumers as well to find products in  one place? <br>
-13. How do we stop economic growth? If so, how do we link veganism with anti-growth movements?<br>
-14. How do we get money out of politics?<br>
-15. How do we employ all vegans to make Vegan World 2026?<br>
-16.  How do we get individuals to become more self-reliant and develop their  own relationship with the Earth and growing food and taking care of the  natural world? How do we stop being so dependent on corporations and  government, etc., to do everything for us? <br>
-17. How are we going to save all the farm animals when animal ag starts collapsing? <br>
-18. How to show/create a plan to grow the green economy? <br>
-19. How do we address dairy farmers who are in a co-op get into a more sustainable drink product?<br>
-20. How do we make vegan companies more profitable? <br>
-21. How do we express the importance of voting in the current political system? <br>
-22. How do we stop the BACONIZATION of food in restaurants, etc.? <br>
-23.  Is our energy better spent trying to change the current system from  within, or creating a new system that people can jump to as the current one collapses?<br>
+      <table id="ecological2" class="table table-hover table-responsive-md btn-table">
 
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Favorite</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
 
-      </p>
+        <tbody>
+        <div class="section1"><p>{{ques}}</p></div>
+        <div class="not-show" style="display: none;">{{new1}}</div>
+        {%for i in new1%}
+          <tr>
+            <td>
+            <p class="data-select1" name="data-select">{{i}}</p></td>
+            <td class="text-center"> <span class="btn-fav badge badge-danger btn-circle">5</span></td>
+            <td class="text-center">
+              <div class="dropdown">
+                <button class="btn btn-action btn-sm btn-circle btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                <div class="dropdown-menu dropdown-primary">
+                  <form method="post" action="/bookmarking_work/">
+                  <input type="text" name="data-select" style="display: none;" value="{{i}}">
+                  <button class="dropdown-item" name="bookmark"><i style="color: red;" class="fas fa-heart"></i> Favorite</button>
+                  <button class="dropdown-item" name="flag"><i style="color: orange;" class="fas fa-flag"></i> Flag as duplicate</button>
+                  <a class="dropdown-item" href="#"><i style="color: green;" class="fas fa-pen"></i> Study Group</a>
+                  </form>
+                </div>
+              </div>
+          </td>
+        </tr>
+        {%endfor%}
+        </tbody>
+
+      </table>
     </div>
   </div>
 </div>
@@ -137,7 +149,7 @@
   <div class="row">
     <div class="col-md-12 text-center">
        <h4 class="h4-responsive font-weight-bold mb-3">ECONOMIC NEW MODEL  </h4>
-       <img class="img-fluid z-depth-3" src="img/Economic+New+Model.jpg">
+       <img class="img-fluid z-depth-3" src="{{ url_for('static',filename='img/Economic+New+Model.jpg')}}">
     </div>
   </div>
 </div>
@@ -147,30 +159,44 @@
   <div class="row">
     <div class="col-md-12">
       <h6 class="h6-responsive font-weight-bold mb-3">ECONOMIC NEW MODEL QUESTIONS: </h6>
-      <p>
-        1. What do businesses and current corporations look like in the new system and do they continue to exist? What incentives do people and businesses have to join the new system? How do we convince people to give up their power and wealth? - <a href="study_group.html">New Economy Study Group</a><br>
-2. How do we enable a distributed land trusteeship system? <br>
-3. How do we develop a world so no one is living in poverty and are equal? <br>
-4. How do we end income inequality? <br>
-5. What new economic metrics do we use to measure ecological disparity/prosperity? <br>
-6. How do we decide the worth of people’s work? <br>
-7. How do we team up with chef schools, restaurant associations and former cooperatives to create a new paradigm? <br>
-8. How do we over grow the government and create abundance for ALL LIFE? <br>
-9. Should we establish a basic income for all citizens? <br>
-10. How do we create a love based currency that never deflates? <br>
-11. How can we value emotional, mental and spiritual health? <br>
-12. Are there limits to economic growth in a Vegan World? If so, what are they? <br>
-13. How can we support activists financially? <br>
-14. How do we make sure everyone has enough? <br>
-15. How do we team up with local restaurants and transition to an entirely Vegan menu? <br>
-16. How can everyone have a safe, sound and sanitary home? <br>
-17. Is it time to invest in a new monetary system? <br>
-18. How can we effectively educate on the true cost of animal agriculture? <br>
-19. How do we create community programs that use local resources, providing excess to surrounding states and reduce carbon footprints? <br>
-20. How do we share intellectual property across the globe? <br>
-21. How do we all use the new money system? <br>
-22. How do we establish fair pricing for animal products? <br>
-      </p>
+
+      <table id="ecological2" class="table table-hover table-responsive-md btn-table">
+
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Favorite</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <div class="section1"><p>{{ques}}</p></div>
+        <div class="not-show" style="display: none;">{{allnews}}</div>
+        {%for i in allnews%}
+          <tr>
+            <td>
+            <p class="data-select1" name="data-select">{{i}}</p></td>
+            <td class="text-center"> <span class="btn-fav badge badge-danger btn-circle">5</span></td>
+            <td class="text-center">
+              <div class="dropdown">
+                <button class="btn btn-action btn-sm btn-circle btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                <div class="dropdown-menu dropdown-primary">
+                  <form method="post" action="/bookmarking_work/">
+                  <input type="text" name="data-select" style="display: none;" value="{{i}}">
+                  <button class="dropdown-item" name="bookmark"><i style="color: red;" class="fas fa-heart"></i> Favorite</button>
+                  <button class="dropdown-item" name="flag"><i style="color: orange;" class="fas fa-flag"></i> Flag as duplicate</button>
+                  <a class="dropdown-item" href="#"><i style="color: green;" class="fas fa-pen"></i> Study Group</a>
+                  </form>
+                </div>
+              </div>
+          </td>
+        </tr>
+        {%endfor%}
+        </tbody>
+
+      </table>
     </div>
   </div>
 </div>
@@ -261,13 +287,15 @@
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/jquery-3.4.0.min.js')}}"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/popper.min.js')}}"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/mdb.min.js')}}"></script>
+
+  <script type="text/javascript" src="{{url_for('static',filename='js/addons/datatables.min.js')}}"></script>
 </body>
 
 </html>

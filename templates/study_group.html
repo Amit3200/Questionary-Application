@@ -6,16 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Study Groups - Vegan World 2016!  </title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="css/style.css" rel="stylesheet">
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static',filename='css/mdb.min.css') }}" rel="stylesheet">
+  <link rel="shortcut icon" href="{{url_for('static',filename='img/favicon.ico') }}" type="image/x-icon">
+  <link rel="icon" href="{{url_for('static',filename='img/favicon.ico') }}" type="image/x-icon">
+  <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet">
+
   <meta name="theme-color" content="#4285F4">
   <style type="text/css">
     @media (max-width: 991px) {
@@ -33,7 +30,7 @@
 <header>
 <nav class="navbar navbar-expand-lg  navbar-dark primary-color fixed-top scrolling-navbar">
   <a class="navbar-brand" href="index.html">
-    <img src="img/logo.png" height="80" alt="vegan world 2026 logo">
+    <img src="{{url_for('static',filename='img/logo.png')}}" height="80" alt="vegan world 2026 logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,31 +39,31 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link text-white text-uppercase font-weight-bold" href="index.html">Home </a>
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/">Home </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white text-uppercase font-weight-bold" href="overview.html">Overview</a>
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/overview/">Overview</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white text-uppercase font-weight-bold" href="ecological.html">Ecological</a>
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/ecological/">Ecological</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white text-uppercase font-weight-bold" href="economic.html">Economic</a>
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/economic/">Economic</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white text-uppercase font-weight-bold" href="political.html">Political</a>
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/political/">Political</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white text-uppercase font-weight-bold" href="social.html">Social</a>
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/social/">Social</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white text-uppercase font-weight-bold" href="spiritual.html">Spiritual</a>
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/spiritual/">Spiritual</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link text-white text-uppercase font-weight-bold" href="study_group.html">Study Groups</a>
+        <a class="nav-link text-white text-uppercase font-weight-bold" href="/study_group/">Study Groups</a>
       </li>
       <li class="nav-item">
-        <a href="join_us.html">
+        <a href="/join_us/">
         <button class="btn-join-us btn btn-amber btn-sm waves-effect font-weight-bold" type="button">Join Us!</button>
       </a>
       </li>
@@ -113,55 +110,55 @@
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="process" role="tabpanel" aria-labelledby="process-list">
           <h5 class="h5-responsive font-weight-bold text-center mb-3">VW2026 PROCESS STUDY GROUP</h5>
-          <img class="img-fluid" src="img/VW2026+Process+Study+Group.jpg">
+          <img class="img-fluid" src="{{url_for('static',filename='img/VW2026+Process+Study+Group.jpg')}}">
         </div>
         <div class="tab-pane fade" id="veganic" role="tabpanel" aria-labelledby="veganic-list">
           <h5 class="h5-responsive font-weight-bold text-center mb-3">VEGANIC PERMACULTURE STUDY GROUP</h5>
-          <img class="img-fluid" src="img/Veganic+Permaculture+Study+Group.jpg">
+          <img class="img-fluid" src="{{url_for('static',filename='img/Veganic+Permaculture+Study+Group.jpg')}}">
         </div>
         <div class="tab-pane fade" id="thriving" role="tabpanel" aria-labelledby="thriving-list">
           <h5 class="h5-responsive font-weight-bold text-center mb-3">THRIVING SYSTEM STUDY GROUP</h5>
-          <img class="img-fluid" src="img/Thriving+System+Study+Group.jpg">
+          <img class="img-fluid" src="{{url_for('static',filename='img/Thriving+System+Study+Group.jpg')}}">
         </div>
         <div class="tab-pane fade" id="economy" role="tabpanel" aria-labelledby="economy-list">
           <h5 class="h5-responsive font-weight-bold text-center mb-3">NEW ECONOMY STUDY GROUP</h5>
-          <img class="img-fluid" src="img/New+Economy+Study+Group.jpg">
+          <img class="img-fluid" src="{{url_for('static',filename='img/New+Economy+Study+Group.jpg')}}">
         </div>
         <div class="tab-pane fade" id="nature" role="tabpanel" aria-labelledby="nature-list">
           <h5 class="h5-responsive font-weight-bold text-center mb-3">NATURE STEWARDSHIP STUDY GROUP</h5>
-          <img class="img-fluid" src="img/Nature+Stewardship+Study+Group.jpg">
+          <img class="img-fluid" src="{{url_for('static',filename='img/Nature+Stewardship+Study+Group.jpg')}}">
         </div>
         <div class="tab-pane fade" id="unifying" role="tabpanel" aria-labelledby="unifying-list">
           <h5 class="h5-responsive font-weight-bold text-center mb-3">UNIFYING VEGANS STUDY GROUP</h5>
-          <img class="img-fluid" src="img/Unifying+Vegans+Study+Group.jpg">
+          <img class="img-fluid" src="{{url_for('static',filename='img/Unifying+Vegans+Study+Group.jpg')}}">
         </div>
         <div class="tab-pane fade" id="land" role="tabpanel" aria-labelledby="land-list">
           <h5 class="h5-responsive font-weight-bold text-center mb-3">LAND REHABILITATION STUDY GROUP</h5>
-          <img class="img-fluid" src="img/Land+Rehabilitation+Study+Group.jpg">
+          <img class="img-fluid" src="{{url_for('static',filename='img/Land+Rehabilitation+Study+Group.jpg')}}">
         </div>
         <div class="tab-pane fade" id="religious" role="tabpanel" aria-labelledby="religious-list">
           <h5 class="h5-responsive font-weight-bold text-center mb-3">RELIGIOUS TRADITIONS STUDY GROUP</h5>
-          <img class="img-fluid" src="img/Religious+Traditions+Study+Group.jpg">
+          <img class="img-fluid" src="{{url_for('static',filename='img/Religious+Traditions+Study+Group.jpg')}}">
         </div>
         <div class="tab-pane fade" id="gender" role="tabpanel" aria-labelledby="gender-list">
           <h5 class="h5-responsive font-weight-bold text-center mb-3">GENDER ROLES STUDY GROUP</h5>
-          <img class="img-fluid" src="img/Gender+Roles+Study+Group.jpg">
+          <img class="img-fluid" src="{{url_for('static',filename='img/Gender+Roles+Study+Group.jpg')}}">
         </div>
         <div class="tab-pane fade" id="compassionate" role="tabpanel" aria-labelledby="compassionate-list">
           <h5 class="h5-responsive font-weight-bold text-center mb-3">COMPASSIONATE COMMERCE STUDY GROUP</h5>
-          <img class="img-fluid" src="img/Compassionate+Economics+Study+Group.jpg">
+          <img class="img-fluid" src="{{url_for('static',filename='img/Compassionate+Economics+Study+Group.jpg')}}">
         </div>
         <div class="tab-pane fade" id="ending" role="tabpanel" aria-labelledby="ending-list">
           <h5 class="h5-responsive font-weight-bold text-center mb-3">ENDING SUBSIDIES STUDY GROUP</h5>
-          <img class="img-fluid" src="img/Ending+Subsidies+Study+Group.jpg">
+          <img class="img-fluid" src="{{url_for('static',filename='img/Ending+Subsidies+Study+Group.jpg')}}">
         </div>
         <div class="tab-pane fade" id="jobs" role="tabpanel" aria-labelledby="jobs-list">
           <h5 class="h5-responsive font-weight-bold text-center mb-3">CHANGING JOBS STUDY GROUP</h5>
-          <img class="img-fluid" src="img/Changing+Jobs+Study+Group.jpg">
+          <img class="img-fluid" src="{{url_for('static',filename='img/Changing+Jobs+Study+Group.jpg')}}">
         </div>
         <div class="tab-pane fade" id="speciesism" role="tabpanel" aria-labelledby="speciesism-list">
           <h5 class="h5-responsive font-weight-bold text-center mb-3">SPECIESISM EDUCATION STUDY GROUP</h5>
-          <img class="img-fluid" src="img/Speciesism+Education+Study+Group.jpg">
+          <img class="img-fluid" src="{{url_for('static',filename='img/Speciesism+Education+Study+Group.jpg')}}">
         </div>
       </div>
     </div>
@@ -246,14 +243,15 @@
 
 
   <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/jquery-3.4.0.min.js')}}"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/popper.min.js')}}"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/mdb.min.js')}}"></script>
+
+  <script type="text/javascript" src="{{url_for('static',filename='js/addons/datatables.min.js')}}"></script>
 </body>
 
 </html>

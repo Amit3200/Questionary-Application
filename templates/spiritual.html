@@ -24,7 +24,7 @@
 <header>
 <nav class="navbar navbar-expand-lg  navbar-dark primary-color fixed-top scrolling-navbar">
   <a class="navbar-brand" href="index.html">
-    <img src="img/logo.png" height="80" alt="vegan world 2026 logo">
+    <img src="{{url_for('static',filename='img/logo.png')}}" height="80" alt="vegan world 2026 logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +41,7 @@
       <li class="nav-item">
         <a class="nav-link text-white text-uppercase font-weight-bold" href="/ecological/">Ecological</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link text-white text-uppercase font-weight-bold" href="/economic/">Economic</a>
       </li>
       <li class="nav-item">
@@ -50,7 +50,7 @@
       <li class="nav-item">
         <a class="nav-link text-white text-uppercase font-weight-bold" href="/social/">Social</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link text-white text-uppercase font-weight-bold" href="/spiritual/">Spiritual</a>
       </li>
       <li class="nav-item">
@@ -69,7 +69,7 @@
 <div class="container space">
   <div class="row">
     <div class="col-md-7">
-      <img class="img-fluid z-depth-3" src="img/Day+2+4.jpeg">
+      <img class="img-fluid z-depth-3" src="{{url_for('static',filename='img/Day+2+4.jpeg')}}">
     </div>
     <div class="col-md-5">
       <h6 class="h6-responsive font-weight-bold mb-3">SPIRITUAL PRINCIPLES:</h6>
@@ -88,8 +88,9 @@
   <div class="row">
     <div class="col-md-12 text-center">
        <h4 class="h4-responsive font-weight-bold mb-3">SPIRITUAL SHIFT </h4>
-       <img class="img-fluid z-depth-3" src="img/Spiritual+Shift+Questions.jpg">
+       <img class="img-fluid z-depth-3" src="{{url_for('static',filename='img/Spiritual+Shift+Questions.jpg')}}">
     </div>
+              <div class="section1"><form action="/questions_discuss/" method="post"><input type="text" name="category" value="social" style="display: none"><button class="btn btn-primary">Ask Question</button></form></div>
   </div>
 </div>
 
@@ -97,42 +98,43 @@
   <div class="row">
     <div class="col-md-12">
       <h6 class="h6-responsive font-weight-bold mb-3">SPIRITUAL SHIFT QUESTIONS: </h6>
-      <p>
-        1. How can we engage all faiths to see that Veganism is the essence of the Golden rule? 
-2. How are we going to change religious traditions that believe animals are given to us as food? -<a href="study_group.html"> Religions Traditions Study Group</a><br>
-3. How do we convey our message of lovingkindness for all beings to yoga/meditation teachers and spiritual leaders who teach kindness but eat animals? <br>
-4. How can we transition from the traditional/sacred and ancient practices that have been passed down culturally that still have underlying pieces unaligned with a Vegan world? <br>
-5. How can we help bring about spiritual awakening for others and help them discover their true identity that exists in their hearts and souls? <br>
-6. How do we raise the vibration of the planet through Vegan practices? <br>
-7. How can we create peace without egos? <br>
-8. How do we connect stewardship of the planet means taking care of the animals? <br>
-9. How to start my spiritual journey? <br>
-10. How do we break the disconnectedness habit since disconnectedness from the consequences of actions is the basis of ignorance and always increases exploitation? <br>
-11. How can we advocate/educate spirituality of Veganism in practical ways that appeal to Western culture and avoid religion? <br>
-12. How do we effectively and spiritually use visioning to actually manifest? <br>
-13. How do we let go of different religions? <br>
-14. Would widespread use of psychedelic/plant medicine help open us up to the inner-connection of all creation? <br>
-15. How do we get our prominent spiritual leaders to acknowledge the power of plant-based living? <br>
-16. What is Spirituality? <br>
-17. How is Spirituality and Veganism connected? <br>
-18. How do we make life practices spiritual? <br>
-19. How do we help/implore religions to adopt veganism as a spiritual practice? <br>
-20. How can we bring spirituality into the education system? <br>
-21. How do we empower women? <br>
-22. How do we transform patriarchy’s dominator mindset to the mindset of Ahimsa? <br>
-23. How can we truly, deeply connect spiritually with the world? <br>
-24. How can we create a Vegan paradigm? <br>
-25. How can we learn to treat our bodies as a sacred temple? <br>
-26. How do we use the Christian Bible to bring the Vegan message forward? <br>
-27. How do we unify all spiritual/religious beliefs? <br>
-28. How do we involve Meditation with Veganism? <br>
-29. How do we educate mindfulness to Vegans and Veganism to mindfulness practitioners? <br>
-30. How can we teach congregations and mainstream religions (synagogues and churches) to embrace Veganism? <br>
-31. How do we make people want to care about this? <br>
-32. How to bring more spiritual teachers? <br>
+  <table id="ecological2" class="table table-hover table-responsive-md btn-table">
 
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Favorite</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
 
-      </p>
+        <tbody>
+        <div class="section1"><p>{{ques}}</p></div>
+        <div class="not-show" style="display: none;">{{new1}}</div>
+        {%for i in new1%}
+          <tr>
+            <td>
+            <p class="data-select1" name="data-select">{{i}}</p></td>
+            <td class="text-center"> <span class="btn-fav badge badge-danger btn-circle">5</span></td>
+            <td class="text-center">
+              <div class="dropdown">
+                <button class="btn btn-action btn-sm btn-circle btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                <div class="dropdown-menu dropdown-primary">
+                  <form method="post" action="/bookmarking_work/">
+                  <input type="text" name="data-select" style="display: none;" value="{{i}}">
+                  <button class="dropdown-item" name="bookmark"><i style="color: red;" class="fas fa-heart"></i> Favorite</button>
+                  <button class="dropdown-item" name="flag"><i style="color: orange;" class="fas fa-flag"></i> Flag as duplicate</button>
+                  <a class="dropdown-item" href="#"><i style="color: green;" class="fas fa-pen"></i> Study Group</a>
+                  </form>
+                </div>
+              </div>
+          </td>
+        </tr>
+        {%endfor%}
+        </tbody>
+
+      </table>
     </div>
   </div>
 </div>
@@ -141,7 +143,7 @@
   <div class="row">
     <div class="col-md-12 text-center">
        <h4 class="h4-responsive font-weight-bold mb-3">SPIRITUAL NEW MODEL  </h4>
-       <img class="img-fluid z-depth-3" src="img/Spiritual+New+Model.jpg">
+       <img class="img-fluid z-depth-3" src="{{url_for('static',filename='img/Spiritual+New+Model.jpg')}}">
     </div>
   </div>
 </div>
@@ -151,25 +153,44 @@
   <div class="row">
     <div class="col-md-12">
       <h6 class="h6-responsive font-weight-bold mb-3">SPIRITUAL NEW MODEL QUESTIONS: </h6>
-      <p>
-        1. How do we establish centers and schools where people can seek knowledge and consciousness pertaining to healing, cleansing and reconnecting our lives to living in harmony with Nature and becoming the true stewards of the Earth that humans are meant to be? - <a href="study_group.html"> Nature Stewardship Study Group </a><br>
-2. How can we heal negative judgements about religion so that we can preserve their rich traditions and heartfelt experiences of connection and praise, while simultaneously aligning religions, practice, teachings and expressions with the spiritual principle of the Oneness of all Life? <br>
-3. How do we help people and animals heal from the trauma of the past? <br>
-4. How do we create spiritual centers that are united by Vegan compassion? <br>
-5. Will religion become obsolete or will there be a new type of institution that teaches and promotes positive ethics and values without systematic oppression, racism, sexism, homophobia, speciesism, etc.? <br>
-6. How do we unite as one spiritual body? <br>
-7. How can we effectively transition many religious institutions to focus on an environment of stewardship for the planet in the present in order to move away from lack of accountability and detachment, with the only real concern for a “greater afterlife”?  <br>
-8. How do we remove religion from government? <br>
-9. How can we address and abolish homophobia, transphobia, racism, xenophobia and speciesism within religious and spiritual communities? <br>
-10. How do we redefine spirituality and separate it from religion so that it is accessible to all? 
-11. Is Love the Religion? <br>
-12. “All life is sacred”. Can we accept this as a culture? <br>
-13. Should we forgive the intransigents? <br>
-14. How do we ensure respect for religious differences? <br>
-15. How do we transform the concept of dominion?<br>
 
+      <table id="ecological2" class="table table-hover table-responsive-md btn-table">
 
-      </p>
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Favorite</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <div class="section1"><p>{{ques}}</p></div>
+        <div class="not-show" style="display: none;">{{allnews}}</div>
+        {%for i in allnews%}
+          <tr>
+            <td>
+            <p class="data-select1" name="data-select">{{i}}</p></td>
+            <td class="text-center"> <span class="btn-fav badge badge-danger btn-circle">5</span></td>
+            <td class="text-center">
+              <div class="dropdown">
+                <button class="btn btn-action btn-sm btn-circle btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                <div class="dropdown-menu dropdown-primary">
+                  <form method="post" action="/bookmarking_work/">
+                  <input type="text" name="data-select" style="display: none;" value="{{i}}">
+                  <button class="dropdown-item" name="bookmark"><i style="color: red;" class="fas fa-heart"></i> Favorite</button>
+                  <button class="dropdown-item" name="flag"><i style="color: orange;" class="fas fa-flag"></i> Flag as duplicate</button>
+                  <a class="dropdown-item" href="#"><i style="color: green;" class="fas fa-pen"></i> Study Group</a>
+                  </form>
+                </div>
+              </div>
+          </td>
+        </tr>
+        {%endfor%}
+        </tbody>
+
+      </table>
     </div>
   </div>
 </div>
@@ -260,13 +281,15 @@
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/jquery-3.4.0.min.js')}}"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/popper.min.js')}}"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/mdb.min.js')}}"></script>
+
+  <script type="text/javascript" src="{{url_for('static',filename='js/addons/datatables.min.js')}}"></script>
 </body>
 
 </html>

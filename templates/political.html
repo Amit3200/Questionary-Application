@@ -22,7 +22,7 @@
 <header>
 <nav class="navbar navbar-expand-lg  navbar-dark primary-color fixed-top scrolling-navbar">
   <a class="navbar-brand" href="index.html">
-    <img src="img/logo.png" height="80" alt="vegan world 2026 logo">
+    <img src="{{url_for('static',filename='img/logo.png')}}" height="80" alt="vegan world 2026 logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,10 +39,10 @@
       <li class="nav-item">
         <a class="nav-link text-white text-uppercase font-weight-bold" href="/ecological/">Ecological</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link text-white text-uppercase font-weight-bold" href="/economic/">Economic</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link text-white text-uppercase font-weight-bold" href="/political/">Political</a>
       </li>
       <li class="nav-item">
@@ -67,7 +67,7 @@
 <div class="container space">
   <div class="row">
     <div class="col-md-7">
-      <img class="img-fluid z-depth-3" src="img/Day+2+5.jpeg">
+      <img class="img-fluid z-depth-3" src="{{url_for('static',filename='img/Day+2+5.jpeg')}}">
     </div>
     <div class="col-md-5">
       <h6 class="h6-responsive font-weight-bold mb-3">POLITICAL PRINCIPLES:</h6>
@@ -84,7 +84,7 @@
   <div class="row">
     <div class="col-md-12 text-center">
        <h4 class="h4-responsive font-weight-bold mb-3">POLITICAL SHIFT </h4>
-       <img class="img-fluid z-depth-3" src="img/Political+Shift+Questions.jpg">
+       <img class="img-fluid z-depth-3" src="{{url_for('static',filename='img/Political+Shift+Questions.jpg')}}">
     </div>
   </div>
 </div>
@@ -93,34 +93,44 @@
   <div class="row">
     <div class="col-md-12">
       <h6 class="h6-responsive font-weight-bold mb-3">POLITICAL SHIFT QUESTIONS: </h6>
-      <p>
-        1. How do we end the subsidizing of animal products for food and get Big Ag to pay for their use of the fresh water supply and land use? - <a href="study_group.html">Ending Subsidies Study Group </a><br>
-2. How do we govern ourselves without political boundaries? <br>
-3. How do we get politicians who run on a plant-based platform? How do we get laws for sentient beings? <br>
-4. How can we dismantle our current toxic government? We can’t reason with greed and capitalism. How do we set higher standards? <br>
-5. How do we create political equilibrium in our world and root out deception and greed? <br>
-6. How can we eliminate wealth and the owners of capital’s influence on the political process? <br>
-7. How do we get out political systems and health care systems to understand that a plant-based public will save their precious $$$?<br> 
-8. What kinds of legislative, policy, structural and economic strategies will reverse the externalization of the costs of animal ag, fishing onto the environmental, health, mental health, community etc.? <br>
-9. How should we vote, Democratic, Green or Humane? Obviously, the Humane party is more aligned with our ideals, but from a strategic standpoint, it might make more sense to vote Democratic to get all of the Republicans who want to protect wealth the heck out of there! <br>
-10. How do we get the Green party to become more involved in bringing up Veganism? <br>
-11. Do we promote reform or revolution? What kind of reform, or what kind of revolution? <br>
-12. How do we transition the US/world to new political principles as quickly as possible? <br>
-13. How do we stop the Farm Bill - as a nearer term goal - from supporting animal agriculture? <br>
-14. How do we collapse the current monetary system and replace it with something more equitable? <br>
-15. As we subvert the hierarchical, patriarchal paradigm, can we create a non-hierarchical, nonviolent system of non-government? <br>
-16. How can we get all vegans to back up/join the Humane party, a vegan, national political party? <br>
-17. Can we really work within the current system if it is so corrupt already? <br>
-18. How do we align ourselves with non-vegan political parties or groups, e.g., Democrats, Socialists, Sierra Club, etc.?<br>
-19. How do we get money out of politics? <br>
-20. What happened to “We, the People”? Shift the paradigm for capitalist contraption to “For the best of all” <br>
-21. What is the catalyst in a paradigm shift in consciousness? <br>
-22. How can Vegans advocate hunting/fishing rights for indigenous people? <br>
-23. How do we get more Vegans elected? <br>
-24. How can we get more people on board to vote for the Humane party? <br>
+           <div class="section1"><form action="/questions_discuss/" method="post"><input type="text" name="category" value="political" style="display: none"><button class="btn btn-primary">Ask Question</button></form></div>
+      <table id="ecological2" class="table table-hover table-responsive-md btn-table">
 
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Favorite</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
 
-      </p>
+        <tbody>
+        <div class="section1"><p>{{ques}}</p></div>
+        <div class="not-show" style="display: none;">{{new1}}</div>
+        {%for i in new1%}
+          <tr>
+            <td>
+            <p class="data-select1" name="data-select">{{i}}</p></td>
+            <td class="text-center"> <span class="btn-fav badge badge-danger btn-circle">5</span></td>
+            <td class="text-center">
+              <div class="dropdown">
+                <button class="btn btn-action btn-sm btn-circle btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                <div class="dropdown-menu dropdown-primary">
+                  <form method="post" action="/bookmarking_work/">
+                  <input type="text" name="data-select" style="display: none;" value="{{i}}">
+                  <button class="dropdown-item" name="bookmark"><i style="color: red;" class="fas fa-heart"></i> Favorite</button>
+                  <button class="dropdown-item" name="flag"><i style="color: orange;" class="fas fa-flag"></i> Flag as duplicate</button>
+                  <a class="dropdown-item" href="#"><i style="color: green;" class="fas fa-pen"></i> Study Group</a>
+                  </form>
+                </div>
+              </div>
+          </td>
+        </tr>
+        {%endfor%}
+        </tbody>
+
+      </table>
     </div>
   </div>
 </div>
@@ -129,7 +139,7 @@
   <div class="row">
     <div class="col-md-12 text-center">
        <h4 class="h4-responsive font-weight-bold mb-3">POLITICAL NEW MODEL  </h4>
-       <img class="img-fluid z-depth-3" src="img/Political+New+Model.jpg">
+       <img class="img-fluid z-depth-3" src="{{url_for('static',filename='img/Political+New+Model.jpg')}}">
     </div>
   </div>
 </div>
@@ -139,27 +149,43 @@
   <div class="row">
     <div class="col-md-12">
       <h6 class="h6-responsive font-weight-bold mb-3">POLITICAL NEW MODEL QUESTIONS: </h6>
-      <p>
-        1. How do we shift from governing separate countries to governing each ecosystem factor? <br>
-2. What would a decentralized government and currency look like? <br>
-3. How do we insure the interests of assorted marginalized populations are addressed effectively? <br>
-4. How do we overturn Citizens United so that we can get money out of politics? <br>
-5. How do we create politics based on Vegan compassion, animal rights and environmental stability? <br>
-6. How do we remove someone from office who is not looking out for the collective well being? <br>
-7. How do we govern ourselves/community without egos? <br>
-8. Can we create a political system that is not based on hierarchies and is equal in ranks? <br>
-9. How would an environmentally responsible country interact with other countries which are not environmentally responsible or less so? <br>
-10. Aside from voting and living a vegan lifestyle, what actions can we take that will have the most impact? <br>
-11. What kind of structures will insure inclusion, equality and justice for those who don’t fully embrace veganism? <br>
-12. How do we avoid substituting the oppression of animals with the oppression of those who don’t identify as Vegan? <br>
-13. How do we reclaim our right as sovereign citizens under local community/state rule? <br>
-14. Will we still vote in regular elections? <br>
-15. How can we protect our rights with our government? <br>
-16. How will things get done? Are there certain rules? <br>
-17. How can we show the true cost to taxpayers and how oppression parallels that of nonhuman animals? <br>
-18. How do we make our new system impervious to selfishness and greed? <br>
-19. How do we govern ourselves without political boundaries?<br>
-      </p>
+      <table id="ecological2" class="table table-hover table-responsive-md btn-table">
+
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Favorite</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <div class="section1"><p>{{ques}}</p></div>
+        <div class="not-show" style="display: none;">{{allnews}}</div>
+        {%for i in allnews%}
+          <tr>
+            <td>
+            <p class="data-select1" name="data-select">{{i}}</p></td>
+            <td class="text-center"> <span class="btn-fav badge badge-danger btn-circle">5</span></td>
+            <td class="text-center">
+              <div class="dropdown">
+                <button class="btn btn-action btn-sm btn-circle btn-primary" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-v"></i></button>
+                <div class="dropdown-menu dropdown-primary">
+                  <form method="post" action="/bookmarking_work/">
+                  <input type="text" name="data-select" style="display: none;" value="{{i}}">
+                  <button class="dropdown-item" name="bookmark"><i style="color: red;" class="fas fa-heart"></i> Favorite</button>
+                  <button class="dropdown-item" name="flag"><i style="color: orange;" class="fas fa-flag"></i> Flag as duplicate</button>
+                  <a class="dropdown-item" href="#"><i style="color: green;" class="fas fa-pen"></i> Study Group</a>
+                  </form>
+                </div>
+              </div>
+          </td>
+        </tr>
+        {%endfor%}
+        </tbody>
+
+      </table>
     </div>
   </div>
 </div>
@@ -250,13 +276,15 @@
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/jquery-3.4.0.min.js')}}"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/popper.min.js')}}"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/mdb.min.js')}}"></script>
+
+  <script type="text/javascript" src="{{url_for('static',filename='js/addons/datatables.min.js')}}"></script>
 </body>
 
 </html>

@@ -22,7 +22,7 @@
 <header>
 <nav class="navbar navbar-expand-lg  navbar-dark primary-color fixed-top scrolling-navbar">
   <a class="navbar-brand" href="index.html">
-    <img src="img/logo.png" height="80" alt="vegan world 2026 logo">
+    <img src="{{url_for('static',filename='img/logo.png')}}" height="80" alt="vegan world 2026 logo">
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,13 +33,13 @@
       <li class="nav-item">
         <a class="nav-link text-white text-uppercase font-weight-bold" href="/">Home </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link text-white text-uppercase font-weight-bold" href="/overview/">Overview</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white text-uppercase font-weight-bold" href="/ecological/">Ecological</a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link text-white text-uppercase font-weight-bold" href="/economic/">Economic</a>
       </li>
       <li class="nav-item">
@@ -236,7 +236,7 @@
       </div>
     <div class="col-md-6">
       <h5 class="h5-responsive font-weight-bold text-center mb-3">SOME BACKGROUND</h5>
-        <img class="img-fluid z-depth-3" src="img/Slide30.jpg">
+        <img class="img-fluid z-depth-3" src="{{url_for('static',filename='img/Slide30.jpg')}}">
     </div>
   </div>
 </div>
@@ -421,13 +421,13 @@
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script type="text/javascript" src="js/jquery-3.4.0.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/jquery-3.4.0.min.js')}}"></script>
   <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/popper.min.js')}}"></script>
   <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static',filename='js/mdb.min.js')}}"></script>
 </body>
 
 </html>

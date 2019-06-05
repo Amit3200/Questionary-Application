@@ -40,9 +40,15 @@
 		<div class="section1">
 			<div class="ask-questions">
 				<h2 style="margin:25px 0px;">Add Question</h2>
-				<h6 style="font-size:1.2rem;margin: 10px 0px;">Ecological Question</h6>
+				<h6 style="font-size:1.2rem;margin: 10px 0px;">{{category}} Question</h6>
 				<form action="/add_questions/" method="Post">
+						<select name="subtype" class="form-control" style="display: block !important;">
+							<option value="New">New Model</option>
+							<option value="Shift">Shift</option>
+						</select>
 						<input type="textarea" class="form-control question" placeholder="Enter your question here" name="questions">
+
+						<input type="text" style="display: none;" value="{{category}}" name="category">
 						<input type="submit" value="Post" class="btn btn-primary">
 				</form>
 			</div>
